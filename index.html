@@ -15,7 +15,24 @@
 </head>
 
 <body>
-    <div id="root"></div>
+    <div id="root">
+        <div class="container vh-100">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-3 text-center">
+                    <i @click="" class="fas fa-chevron-left"></i>
+                </div>
+                <div class="col-6 slider">
+                    <figure>
+                        <img class="img-fluid img-slider" v-for="(img,index) in images" v-bind:src="img"
+                            :class="showImg(index)">
+                    </figure>
+                </div>
+                <div class="col-3 text-center">
+                    <i @click="" class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./js/script.js"></script>
 </body>
 
