@@ -19,16 +19,22 @@
         <div class="container d-flex justify-content-center align-items-center vh-100">
             <div class="row justify-content-center align-items-center">
                 <div class="col-3 text-center">
-                    <i v-if="currentIndex > 0" @click="decrease" class="fas fa-chevron-left fa-4x"></i>
+                    <i v-if="currentIndex > 0" @click="decrease" class="fas fa-chevron-left fa-4x pointer"></i>
                 </div>
                 <div class="col-6 slider">
-                    <figure>
+                    <figure class="">
                         <img class="img-fluid img-slider" v-for="(img,index) in images" v-bind:src="img"
-                            :class="showImg(index)">
+                            :class="active(index)">
+                        <div class="container-dots d-flex justify-content-center align-items-center">
+                            <div v-for="(dot,dotIndex) in images" class="dots pointer" :class="active(dotIndex)"
+                                @click="changeCurrentIndex(dotIndex)">
+                            </div>
+                        </div>
                     </figure>
                 </div>
                 <div class="col-3 text-center">
-                    <i v-if="currentIndex < images.length - 1" @click="increase" class="fas fa-chevron-right fa-4x"></i>
+                    <i v-if="currentIndex < images.length - 1" @click="increase"
+                        class="fas fa-chevron-right fa-4x pointer"></i>
                 </div>
             </div>
         </div>

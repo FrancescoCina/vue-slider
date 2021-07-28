@@ -12,11 +12,9 @@ const root = new Vue({
             "./img/image3.jpg",
             "./img/image4.jpg",
         ],
-
-
     },
     methods: {
-        showImg(index) {
+        active(index) {
             if (this.currentIndex === index) {
                 return 'active';
             } else {
@@ -24,14 +22,13 @@ const root = new Vue({
             }
         },
         increase() {
-
-
             return this.currentIndex++;
-
-
         },
         decrease() {
             return this.currentIndex--;
+        },
+        changeCurrentIndex(newIndex) {
+            this.currentIndex = newIndex;
         }
     },
 })
